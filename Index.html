@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misteri Box</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background: #0d0d1a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; padding: 20px; }
+        
+        .box { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 350px; width: 100%; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); display: flex; flex-direction: column; align-items: center; }
+        
+        /* Animasi Panah Merah Melompat-lompat */
+        .panah-merah {
+            width: 60px;
+            height: 60px;
+            fill: #ff0033; /* Warna Merah Terang */
+            margin-bottom: 15px;
+            animation: bounce 0.4s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+
+        /* Desain Tombol Bulat */
+        .btn-bulat { 
+            width: 140px; 
+            height: 140px; 
+            background: linear-gradient(45deg, #00f2fe, #4facfe); 
+            color: black; 
+            border: none; 
+            font-size: 18px; 
+            font-weight: bold; 
+            border-radius: 50%; /* Membuat tombol bulat sempurna */
+            cursor: pointer; 
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.6); 
+            transition: 0.2s; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-bulat:active { transform: scale(0.93); box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <!-- Tanda Panah Merah Mengarah ke Bawah -->
+    <svg class="panah-merah" viewBox="0 0 24 24">
+        <path d="M11 4h2v12h3l-4 4-4-4h3V4z"/>
+    </svg>
+    
+    <!-- Tombol Bulat -->
+    <button class="btn-bulat" onclick="mulaiPrank()">coba tekan</button>
+</div>
+
+<script>
+function mulaiPrank() {
+    // Memanggil file MP3 asli milikmu
+    let audioPrank = new Audio('tante.mp3');
+    audioPrank.volume = 1.0; // Volume full
+    audioPrank.play();
+
+    alert("Kena Prank! 🤣");
+}
+</script>
+
+</body>
+</html>
